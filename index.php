@@ -1,30 +1,80 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Мебельная компания");
-?><p>
-Наша компания существует на Российском рынке с 1992 года. За это время «Мебельная компания» прошла большой путь от маленькой торговой фирмы до одного из крупнейших производителей корпусной мебели в России.
-</p><p>
-«Мебельная компания» осуществляет производство мебели на высококлассном оборудовании с применением минимальной доли ручного труда, что позволяет обеспечить высокое качество нашей продукции. Налажен производственный процесс как массового и индивидуального характера, что с одной стороны позволяет обеспечить постоянную номенклатуру изделий и индивидуальный подход – с другой.
-<h3>Наша продукция</h3>
-<?$APPLICATION->IncludeComponent("bitrix:furniture.catalog.index", "", array(
-	"IBLOCK_TYPE" => "products",
-	"IBLOCK_ID" => "2",
-	"IBLOCK_BINDING" => "section",
-	"CACHE_TYPE" => "A",
-	"CACHE_TIME" => "36000000",
-	"CACHE_GROUPS" => "N"
-	),
-	false
-);?>
-<h3>Наши услуги</h3>
-<?$APPLICATION->IncludeComponent("bitrix:furniture.catalog.index", "", array(
-	"IBLOCK_TYPE" => "products",
-	"IBLOCK_ID" => "3",
-	"IBLOCK_BINDING" => "element",
-	"CACHE_TYPE" => "A",
-	"CACHE_TIME" => "36000000",
-	"CACHE_GROUPS" => "N"
-	),
-	false
-);?>
+?>
+		<div class="empty"></div>
+		<div class="section">
+			<div class="page-title">
+				<h1>Test assignment</h1>
+			</div>
+
+			<section>
+				<div class="container">
+				<!-- <div class="form"></div>
+        			<form action="/" method="post">
+		    			<div class="form-group">
+		    				<label for="text">Введите длину массива:</label>
+			    			<input type="text" name="text" placeholder="Привет" id="text" class="form-control">
+		    			</div>
+		    			<button type="submit" class="btn btn-success" id="submit">Отправить</button>
+	    			</form>
+	    		 -->
+	    		 <div class="create_ib">	
+	    		 	<button class="btn">Создать</button>
+	    			<button class="btn">Удалить</button>
+	    			</div>
+				</div>
+				</div>
+			</section>
+		<section>
+			<div class="container">
+				<div class="shedule">
+				<table>
+  					<thead>
+    					<tr>
+      						<th>Дата</th>
+      						<th>Предмет</th>
+      						<th>Пеподаватель</th>
+      						<th>Аудитория</th>
+    					</tr>
+  					</thead>
+  					<tbody>
+    					<tr>
+      						<th>12.10.2022</th>
+      						<td>Статистика45</td>
+      						<td>Немчинов В.С.</td>
+      						<td>203</td>
+    					</tr>
+    					<tr>
+      						<th>12.10.2022</th>
+      						<td>Математика</td>
+      						<td>Перельман Г.Я.</td>
+      						<td>101</td>
+    					</tr>
+   						<tr>
+      						<th>15.10.2022</th>
+      						<td>История</td>
+      						<td>Платонов С.Ф.</td>
+      						<td>102</td>
+    					</tr>
+    					<tr>
+      						<th>15.10.2022</th>
+      						<td>История</td>
+      						<td>Платонов С.Ф.</td>
+      						<td>102</td>
+    					</tr>
+    					<tr>
+      						<th>15.10.2022</th>
+      						<td>История</td>
+      						<td>Платонов С.Ф.</td>
+      						<td>102</td>
+    					</tr>
+  					</tbody>
+				</table>
+			
+				</div>
+			</div>
+		</section>
+
+		</div>
 </p><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
