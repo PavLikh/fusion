@@ -149,7 +149,8 @@ section:nth-child(2n) {
 
 .container {
 	/*background-color: yellow;*/
-	color: #ffffff;
+	/* color: #ffffff; */
+	color: #000;
 	padding-left: 15px;
 	padding-right: 15px;
 	margin-left: auto;
