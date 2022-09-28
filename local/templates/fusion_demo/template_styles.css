@@ -15,10 +15,12 @@ body {
 
 a {
 	color: inherit;
+	/* color: #000; */
 }
 
 a:visited {
-	color: inherit;
+	/* color: inherit; */
+	/* color: #000; */
 }
 
 img {
@@ -96,11 +98,13 @@ section:nth-child(2n) {
     font-size: 16px;
     letter-spacing: 0.1em;
     border-radius: 5px;
+	padding-top: 6px;
     vertical-align: middle;
     /*background-color: #16192B;*/
     background-color: #ffffff;
     box-shadow: 0 5px 25px rgb(0 0 0 / 10%);
     /*color: #B5E527;*/
+	color: #000;
     transition: all 0.15s ease-in-out;
     cursor: pointer;
     /*font-family: 'Roboto Regular';*/
@@ -361,6 +365,7 @@ tbody tr:nth-child(2n) {
 .btn {
     width: 250px;
     height: 50px;
+	padding-top: 10px;
     line-height: 40px;
     text-align: center;
     font-size: 16px;

@@ -2,12 +2,12 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Мебельная компания");
 ?>
+
 		<div class="empty"></div>
 		<div class="section">
 			<div class="page-title">
 				<h1>Test assignment</h1>
 			</div>
-
 			<section>
 				<div class="container">
 				<!-- <div class="form"></div>
@@ -19,13 +19,16 @@ $APPLICATION->SetTitle("Мебельная компания");
 		    			<button type="submit" class="btn btn-success" id="submit">Отправить</button>
 	    			</form>
 	    		 -->
-	    		 <div class="create_ib">	
-	    		 	<button class="btn">Создать</button>
-	    			<button class="btn">Удалить</button>
-	    			</div>
-				</div>
+	    		 	<div class="create_ib">	
+	    		 		<a href='?ib=create' class="btn">Создать</a>
+						 <a href='?ib=del' class="btn">Удалить</a>
+	    				<!-- <button class="btn">Удалить</button> -->
+						<!-- <button class="btn">Удалить</button> -->
+					</div>
 				</div>
 			</section>
+
+
 		<section>
 			<div class="container">
 				<div class="shedule">
