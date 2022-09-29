@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH;?>/assets/js/jquery-3.6.1.min.js"></script>
 <head>
 <head>
 

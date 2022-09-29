@@ -2,22 +2,16 @@
 	margin: 0;
 	padding: 0;
 	outline: none;
-    /* color: #FFFFFF; */
 	text-decoration: none;
 }
 
 body {
-	/*background: green;*/
 	color: #444444 !important;
 	font-family: 'Proxima Nova', 'Arial', sans-serif !important;
 	min-width: 438px;
 }
 
 a {
-	color: inherit;
-}
-
-a:visited {
 	color: inherit;
 }
 
@@ -31,21 +25,27 @@ section:nth-child(2n) {
 	background-color: #E4E8E9;
 }
 
-.section {
-	/*margin-top: 150px;*/
-		/*margin-top: 150px;*/
+p {
+	font-size: 18px;
+	color: #444444;
+	font-weight: 400;
+	line-height: 1.2;
+	margin-bottom: 1rem;
+}
+
+.text {
+	padding-top: 26px;
+	width: 95%;
 }
 
 .page-header {
 	background-color: #ffffff;
-	/*background-color: green;*/
 	width: 100%;
 	height: 61px;
 	display: block;
 	position: fixed;
 	z-index: 5000;
 	box-shadow: 0px 3px 10px rgb(0 0 0 / 10%);
-		/*float: left;*/
 }
 
 .page-header__container {
@@ -72,10 +72,8 @@ section:nth-child(2n) {
 .page-title {
 	display: flex;
 	height: 200px;
-
 	color: white;
 	text-transform: uppercase;
-	  /*text-align: center;*/
 	background-image: url('/local/templates/fusion_demo/assets/images/bg-reliable-partner.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
@@ -87,7 +85,6 @@ section:nth-child(2n) {
 
 /*Form*/
 .btn {
-    /*border: 1px solid #8C8698;*/
     border: none;
     width: 250px;
     height: 50px;
@@ -96,14 +93,13 @@ section:nth-child(2n) {
     font-size: 16px;
     letter-spacing: 0.1em;
     border-radius: 5px;
+	padding-top: 6px;
     vertical-align: middle;
-    /*background-color: #16192B;*/
     background-color: #ffffff;
     box-shadow: 0 5px 25px rgb(0 0 0 / 10%);
-    /*color: #B5E527;*/
+	color: #000;
     transition: all 0.15s ease-in-out;
     cursor: pointer;
-    /*font-family: 'Roboto Regular';*/
     text-transform: uppercase;
 }
 
@@ -116,8 +112,6 @@ section:nth-child(2n) {
 
 .create_ib {
 	height: 120px;
-	/*padding-top: 20px;*/
-	/*padding-bottom: 20px;*/
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -136,16 +130,11 @@ section:nth-child(2n) {
 
 .page-footer {
 	background-color: #444444;
-	/*color: #ffffff;
-	padding-left: 15px;
-	padding-right: 15px;
-	margin-left: auto;*/
-	/*margin-right: auto;*/
 }
 
 .container {
-	/*background-color: yellow;*/
-	color: #ffffff;
+	/* color: #ffffff; */
+	/* color: #000; */
 	padding-left: 15px;
 	padding-right: 15px;
 	margin-left: auto;
@@ -217,6 +206,8 @@ tbody tr:nth-child(2n) {
 	height: 61px;
 }
 
+
+
 .page-header__container {
 	max-width: 540px;
 	padding-right: 65px;
@@ -250,6 +241,11 @@ tbody tr:nth-child(2n) {
 
 .empty {
 	height: 71px;
+}
+
+.text {
+	padding-top: 32px;
+	width: 80%;
 }
 
 .page-title h1 {
@@ -361,6 +357,7 @@ tbody tr:nth-child(2n) {
 .btn {
     width: 250px;
     height: 50px;
+	padding-top: 10px;
     line-height: 40px;
     text-align: center;
     font-size: 16px;
@@ -371,6 +368,11 @@ tbody tr:nth-child(2n) {
 	width: 255px;
     height: 54px;
     box-shadow: 0 5px 25px rgb(0 0 0 / 30%);
+}
+
+.text {
+	padding-top: 40px;
+	width: 70%;
 }
 
 }
