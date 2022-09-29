@@ -1,7 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 <?php
 CModule::IncludeModule("iblock");
-
+//Элементы ИБ
 $exams = [
 	[
 		'subject' => 'Статистика',
@@ -34,7 +34,7 @@ $exams = [
 		'teacher' => 'Кондратьев Н.Д.'
 	],
 ];
-
+// ИБ
 $ibExamList = [
     'NAME' => 'Расписание экзаменов',
     'CODE' => 'exam_schedule',
@@ -49,7 +49,8 @@ if ($_GET['ib'] == 'create'){
     $obBlocktype = new CIBlockType;
     $ob = $obBlocktype->GetById('exams');
     if(!$ob->Fetch()) {
-
+        // проверяем есть ли тип ИБ с таким id
+        // если нет, создаем раздел
         $arFields = Array(
   	    	'ID'=>'exams',
   	    	'SECTIONS'=>'N',
@@ -74,8 +75,11 @@ if ($_GET['ib'] == 'create'){
 	    else{
 	        $DB->Commit();
         }
+        // далее последовательно создаем ИБ
         $id = ft_creat_ib($ibExamList);
+        // задаем нужные свойства
         $prop_id_list = ft_add_ib_props($id, $ibExamList['PROPERTIES']);
+        // создаем элементы
         ft_add_els_with_props($id, $exams, $prop_id_list);
     }
 }
@@ -132,41 +136,6 @@ function ft_add_els_with_props($id, $data, $prop_id_list) {
 	    );
 	    $el->Add($arLoadProductArray);
     }
-}
-
-function ft_git_ibid_by_code($code){
-    $arrFilter = array(
-        'ACTIVE'  => 'Y',
-        'CODE'    => $code,
-        'SITE_ID' => "s1",
-    );
-
-    if ($type) {
-        $arrFilter['TYPE'] = $type;
-    }
-    $arIBlockId = "";
-   
-    if($code){
-        $res = CIBlock::GetList(Array("SORT" => "ASC"), $arrFilter, false);
-    
-
-        
-        if ($ar_res = $res->Fetch()) {
-            $arIBlockId = $ar_res["ID"];
-        }
-    }
-    return $arIBlockId;
-}
-
-
-if ($_GET['ib'] == 'del') {
-    $DB->StartTransaction();
-    if(!CIBlockType::Delete($ibExamList['IBLOCK_TYPE_ID']))
-    {
-        $DB->Rollback();
-        // echo 'Delete error!';
-    }
-    $DB->Commit();
 }
 
 ?>
