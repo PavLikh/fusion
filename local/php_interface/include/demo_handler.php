@@ -46,36 +46,25 @@ $ibExamList = [
     ]
 ];
 
-// $id = ft_git_ibid_by_code($ibExamList['CODE']);
-// echo 'ID fo IB: ' . $id . '<br>';
-
 if ($_GET['ib'] == 'create'){
     $obBlocktype = new CIBlockType;
     $ob = $obBlocktype->GetById('exams');
-    // echo '<pre>';
-    // var_dump($ob);
-    // echo '</pre>';
-    // echo '<pre>';
-    // echo "------------------<br>";
-    // var_dump($ob->Fetch());
-    // echo '</pre>';
     if(!$ob->Fetch()) {
-        // echo 'GET in if';
 
-    $arFields = Array(
-  		'ID'=>'exams',
-  		'SECTIONS'=>'N',
-  		'IN_RSS'=>'N',
-  		'SORT'=>100,
-  		'LANG'=>Array(
-      		'en'=>Array(
-        		'NAME'=>'Exams',
-      		),
-      		'ru'=>Array(
-        		'NAME'=>'Экзамены',
-       		)
-      	)
-  	);
+        $arFields = Array(
+  	    	'ID'=>'exams',
+  	    	'SECTIONS'=>'N',
+  	    	'IN_RSS'=>'N',
+  	    	'SORT'=>100,
+  	    	'LANG'=>Array(
+          		'en'=>Array(
+            		'NAME'=>'Exams',
+          		),
+          		'ru'=>Array(
+            		'NAME'=>'Экзамены',
+           		)
+          	)
+  	    );
 	    $DB->StartTransaction();
 	    $res = $obBlocktype->Add($arFields);
 	    if(!$res)
@@ -93,7 +82,6 @@ if ($_GET['ib'] == 'create'){
 }
 
 function ft_creat_ib($data) {
-    // echo 'ft_creat_ib<br>';
     $ib = new CIBlock;
     $arFields = Array(
         "ACTIVE" => 'Y',
@@ -110,7 +98,6 @@ function ft_creat_ib($data) {
 
 
 function ft_add_ib_props($id, $data) {
-    // echo 'ft_add_ib_props(' . $id . ')<br>';
     $prop_id_list = [];
 	$arr = [
 		'ROOM' => ['Аудитотрия', 'N'],
@@ -134,16 +121,10 @@ function ft_add_ib_props($id, $data) {
 }
 
 function ft_add_els_with_props($id, $data, $prop_id_list) {
-    // echo 'ft_add_els_with_props(' . $id . ')<br>';
-    // var_dump($data);
-    // foreach ($data as $val) {
-    //     var_dump($val);
-    //     echo '<br>';
-    // }
+
     $el = new CIBlockElement;
     foreach($data as $value) {
 	    $arLoadProductArray = Array(
-		    // "MODIFIED_BY"    => $USER->GetID(), // элемент изменен текущим пользователем
 		    "IBLOCK_SECTION_ID" => false,
 		    "IBLOCK_ID"      => $id,
 		    "NAME"           => $value['subject'],
@@ -169,9 +150,7 @@ function ft_git_ibid_by_code($code){
         $arrFilter['TYPE'] = $type;
     }
     $arIBlockId = "";
-    // echo '<pre>';
-    // var_dump($arrFilter);
-    // echo '</pre><br><br>';
+   
     if($code){
         $res = CIBlock::GetList(Array("SORT" => "ASC"), $arrFilter, false);
     
@@ -181,18 +160,12 @@ function ft_git_ibid_by_code($code){
             $arIBlockId = $ar_res["ID"];
         }
     }
-    // echo '<pre>';
-    // var_dump($ar_res);
-    // echo '</pre>';
-    // echo 'ID fo IB: ' . $arIBlockId . '<br>';
     return $arIBlockId;
 }
 
 
 if ($_GET['ib'] == 'del') {
-    // echo 'delete';
     $DB->StartTransaction();
-    // if(!CIBlockType::Delete('exams'))
     if(!CIBlockType::Delete($ibExamList['IBLOCK_TYPE_ID']))
     {
         $DB->Rollback();

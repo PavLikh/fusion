@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Мебельная компания");
+$APPLICATION->SetTitle("Fusion demo");
 ?>
 
 	<div class="empty"></div>
@@ -10,20 +10,12 @@ $APPLICATION->SetTitle("Мебельная компания");
 		</div>
 		<section>
 			<div class="container">
-			<!-- <div class="form"></div>
-    			<form action="/" method="post">
-	    			<div class="form-group">
-	    				<label for="text">Введите длину массива:</label>
-		    			<input type="text" name="text" placeholder="Привет" id="text" class="form-control">
-	    			</div>
-	    			<button type="submit" class="btn btn-success" id="submit">Отправить</button>
-				</form>
-			 -->
+				<div class="text">
+				<p>На странице представлено демо работы компонентов из задания. При клике на кнопку "создать", будут созданы: тип инфоблоков "Экзамены", инфоблок "Расписание экзаменов" с нужными свойствами и 5 элементов со случаными датами и аудиториями. Результат будет выведен в таблице. При клике на "удалить" будут удалены все элементы, инфоблок и тип инфоблока</p>
+				</div>
 			 	<div class="create_ib">	
 			 		<a href='?ib=create' class="btn">Создать</a>
 					 <a href='?ib=del' class="btn">Удалить</a>
-					<!-- <button class="btn">Удалить</button> -->
-					<!-- <button class="btn">Удалить</button> -->
 				</div>
 			</div>
 		</section>
@@ -32,26 +24,15 @@ $APPLICATION->SetTitle("Мебельная компания");
 			<div class="container">
 <?
 
-// echo '$ID = ' . $ID . '<br>';
-// echo '$id = ' . $id . '<br>';
-
 $id = ft_git_ibid_by_code($ibExamList['CODE']);
 $ibTypeId = $ibExamList['IBLOCK_TYPE_ID'];
-// $code = $ibExamList['CODE'];
-// echo 'ID fo IB: ' . $id . '<br>';
 
 $APPLICATION->IncludeComponent(
     "fusion_demo:exam.list",
     "", //template def
     Array(
-		// "IBLOCK_ID" => 30,
 		"IBLOCK_ID" => $id,
-		// "CODE" => $code,
-		//"IBLOCKS" => "5",
 		"IBLOCK_TYPE" => $ibTypeId
-      	//'NAME'      => 'Hello world',
-	  	// "SORT_BY1" => "ACTIVE_FROM",
-		// "SORT_ORDER1" => "ASC",
     )
 );
 

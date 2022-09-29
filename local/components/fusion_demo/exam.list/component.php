@@ -2,10 +2,6 @@
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 
 CModule::IncludeModule("iblock");
-// echo '<pre>';
-// echo 'Component.$arParams:<br>';
-// print_r($arParams);
-// echo '</pre>';
 
 $arParams['IBLOCK_ID'] = intval($arParams['IBLOCK_ID']);
 
@@ -18,7 +14,6 @@ if($arParams['IBLOCK_ID']) {
         "PROPERTY_ROOM"
     );
 
-// $arSelect = Array();
 
     $arFilter = Array(
         "IBLOCK_ID" => $arParams['IBLOCK_ID'],
@@ -36,9 +31,6 @@ if($arParams['IBLOCK_ID']) {
     while($ob = $res->GetNextElement())
     {
         $arFields = $ob->GetFields();
-        // echo '<pre>';
-        // print_r($arFields);
-        // echo '</pre>';
     
         $arResult[] = [
             'DATE_ACTIVE_FROM' => $arFields['DATE_ACTIVE_FROM'],
